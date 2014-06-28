@@ -6,10 +6,11 @@
     tools:context="com.amazon.hackathon.contactshare.activity.MainActivity"
     tools:ignore="MergeRootFrame" >
 
-    <Button
-        android:id="@+id/button_go_to_personal_archive"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="232dp"
+        android:layout_height="232dp"
+        android:contentDescription="@string/imageViewDescription"
+        android:src="@drawable/ic_launcher" />
 
 </FrameLayout>

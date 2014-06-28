@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">HackathonContactShare</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -12,5 +11,6 @@
     <string name="rememberPassword">remember password</string>
     <string name="cancel">Cancel</string>
     <string name="LoginWaitDialogTitle">Login</string>
-    <string name="LoginWaitDialogBody">waiting...</string>
+    <string name="LoginWaitDialogBody"></string>
+    <string name="imageViewDescription">Missing content description</string>
 </resources>

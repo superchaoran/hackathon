@@ -20,8 +20,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.amazon.hackathon.contactshare.login.LoginModel;
+import com.amazon.hackathon.contactshare.utils.addAUrlImage;
 import com.amazon.hackathoncontactshare.R;
 
 public class MainActivity extends ActionBarActivity {
@@ -34,12 +36,14 @@ public class MainActivity extends ActionBarActivity {
   private EditText userID, passwd;
   private CheckBox rememberPassword;
 
+
+
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    buttonGoToPersonalArchiveActivity = (Button) findViewById(R.id.button_go_to_personal_archive);
     sharedPreferences = this.getSharedPreferences("userinfo", Context.MODE_PRIVATE);
     LayoutInflater factory = LayoutInflater.from(MainActivity.this);
     DialogView = factory.inflate(R.layout.dialog_login, null);
@@ -47,7 +51,7 @@ public class MainActivity extends ActionBarActivity {
     passwd = (EditText) DialogView.findViewById(R.id.passwd);
     rememberPassword = (CheckBox) DialogView.findViewById(R.id.rememberPassword);
 
-    setupOnClickListener();
+    //setupOnClickListener();
     setupDialog();
 
     showLoginDialog();
@@ -56,7 +60,17 @@ public class MainActivity extends ActionBarActivity {
       getSupportFragmentManager().beginTransaction().add(R.id.container, new PlaceholderFragment())
           .commit();
     }
+    
+    //add a URL image
+    
+    ImageView iv= (ImageView)findViewById(R.id.imageView1);
+    String url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
+    (new Thread(new addAUrlImage (iv,url))).start();
+
   }
+  
+  
+  
 
   private void showLoginDialog() {
     // TODO Auto-generated method stub
@@ -190,5 +204,6 @@ public class MainActivity extends ActionBarActivity {
     public void handleMessage(Message msg) {
     }
   };
+  
 
 }
