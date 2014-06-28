@@ -111,7 +111,8 @@ public class MainActivity extends ActionBarActivity {
     
     User user10 = new User("sdfsdfsd",url,"dedeedd");
     newList.add(user7);newList.add(user8);newList.add(user9);newList.add(user10);
-    gvg.updateUsers(newList);
+    
+    //gvg.updateUsers(newList);
     
     //add self image and username
     User currentUser = new User("AmazonUser",url,"idAmazonUser");
