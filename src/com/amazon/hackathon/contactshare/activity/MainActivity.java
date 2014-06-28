@@ -1,5 +1,7 @@
 package com.amazon.hackathon.contactshare.activity;
 
+import java.util.ArrayList;
+
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -23,6 +25,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.amazon.hackathon.contactshare.gridview.GridViewGenerator;
 import com.amazon.hackathon.contactshare.login.LoginModel;
 import com.amazon.hackathon.contactshare.personalarchiveactivity.CustomUI;
@@ -86,19 +89,29 @@ public class MainActivity extends ActionBarActivity {
     //Add nearby people usernames and images
     String username="chaoran";
     String url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
-    User user1 = new User(username,url);
+    User user1 = new User(username,url,"idchaoran");
     User user2 = new User("jiahuan",url,"idjiahuan");
     User user3 = new User("zhonghu",url,"idzhonghu");
     User user4 = new User("xuwei",url,"idxuwei");
     User user5 = new User("huayang",url,"idhuayang");
-    new User("laji",url,"idlaji");
+    User user6 = new User("laji",url,"idlaji");
     gvg.addUser(user1);
     gvg.addUser(user2);
     gvg.addUser(user3);
     gvg.addUser(user4);
     gvg.addUser(user5);
+    gvg.addUser(user6);
     gvg.removeUser("idlaji");
-
+    
+    ArrayList<User> newList = new ArrayList<User>();
+    
+    User user7 = new User(username,url,"idchaoran");
+    User user8 = new User("jiahuan",url,"idjiahuan");
+    User user9 = new User("zhonghu",url,"idzhonghu");
+    
+    User user10 = new User("sdfsdfsd",url,"dedeedd");
+    newList.add(user7);newList.add(user8);newList.add(user9);newList.add(user10);
+    gvg.updateUsers(newList);
     
     //add self image and username
     User currentUser = new User("AmazonUser",url,"idAmazonUser");

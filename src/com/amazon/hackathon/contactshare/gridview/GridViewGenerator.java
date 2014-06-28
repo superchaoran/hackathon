@@ -35,14 +35,39 @@ public class GridViewGenerator{
 		this.userList.add(user);
 	}
 	public void removeUser(String userId){
-		for(int i=0;i<userList.size();i++){
-			if(userList.get(i).getUserId().equals(userId)){
-				userList.remove(i);
+		for(int i=0;i<this.userList.size();i++){
+			if(this.userList.get(i).getUserId().equals(userId)){
+				this.userList.remove(i);
 				return;
 			}
 		}
 	}
+	public void updateUsers(ArrayList<User> userList){
+		
+		
+		for(int i=0;i<userList.size();i++){
+			boolean contains=false;
+			for(int j=0;j<this.userList.size();j++){
+				//if old contains, break;
+				if(  this.userList.get(j).getUserId().equals(userList.get(i).getUserId()) ){
+					contains=true; break;
+				}
+			}
+			//if old not contains new, add
+			if(!contains) this.userList.add(userList.get(i));
+		}
+		
+		//if old contains something new not exist remove
+		for(int i=0;i<this.userList.size();i++){
+			boolean contains=false;
+			for(int j=0;j<userList.size();j++){
+				if(  this.userList.get(i).getUserId().equals(userList.get(j).getUserId()) ){
+					contains=true; break;
+				}
+			if(!contains) this.userList.remove(userList.get(i).getUserId());
+			}
+		}
 	
-	
+	}
 
 }

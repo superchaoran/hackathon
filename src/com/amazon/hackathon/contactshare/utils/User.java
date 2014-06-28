@@ -5,10 +5,11 @@ public class User {
 	private String username;
 	private String imageUrl;
 	private String userId;
+	/*
 	public User(String username,String imageUrl){
 		this.username = username;
 		this.imageUrl = imageUrl;
-	}
+	}*/
 	
 	public User(String username,String imageUrl,String userId){
 		this.username = username;
@@ -29,7 +30,7 @@ public class User {
 		this.imageUrl = imageUrl;
 	}
 	public String getUserId() {
-		return userId;
+		return this.userId;
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
