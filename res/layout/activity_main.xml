@@ -25,32 +25,32 @@
 		    
 			<ImageView
 			   android:id="@+id/imageView1"
-			   android:layout_width="70dp"
-			   android:layout_height="70dp"
+			   android:layout_width="150dp"
+			   android:layout_height="150dp"
 			   android:layout_marginTop="10dp"
 			   android:contentDescription="@string/imageViewDescription"
 			   android:src="@drawable/ic_launcher" 
 			   />
 				
 			 <Button
-			     android:layout_width="70dp"
+			     
 			     android:layout_marginTop="10dp"
-			     android:layout_height="wrap_content"
-			     android:layout_gravity="left"
-			     android:text="@string/send" />
-						
-			 <Button
-			     android:layout_width="70dp"
-			     android:layout_marginTop="10dp"
-			     android:layout_height="wrap_content"
+			     android:layout_height="70dp"
+			     android:layout_width="200dp"
 			     android:layout_gravity="left"
 			     android:text="@string/send" />
 
 			 <Button
+			     android:layout_height="70dp"
+			     android:layout_width="200dp"
+			     android:layout_marginTop="10dp"
+			     android:text="@string/send" />
+
+			 <Button
 			     android:id="@+id/button1"
-			     android:layout_width="wrap_content"
-			     android:layout_height="wrap_content"
-			     android:text="Button" />
+   			     android:layout_height="70dp"
+			     android:layout_width="200dp"
+			     android:text="Social Sites" />
 	
 		</LinearLayout>
 	
@@ -59,10 +59,10 @@
 	    android:id="@+id/gridview"
 	    android:layout_width="fill_parent" 
 	    android:layout_height="fill_parent"
-	    android:columnWidth="90dp"
+	    android:columnWidth="150dp"
 	    android:numColumns="auto_fit"
-	    android:verticalSpacing="10dp"
-	    android:horizontalSpacing="10dp"
+	    android:verticalSpacing="20dp"
+	    android:horizontalSpacing="20dp"
 	    android:paddingTop="20dp"
 	    android:stretchMode="columnWidth"
 	    android:gravity="center"

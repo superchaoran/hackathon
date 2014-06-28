@@ -1147,7 +1147,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f050079;
+        public static final int action_settings=0x7f05007b;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int albumTitle=0x7f05005f;
         public static final int albumname=0x7f050041;
@@ -1202,6 +1202,7 @@ containing a value of this type.
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050027;
         public static final int imageView1=0x7f05003d;
+        public static final int imgIcon=0x7f050079;
         public static final int imgView=0x7f05006a;
         public static final int industry=0x7f050069;
         public static final int language=0x7f050071;
@@ -1252,6 +1253,7 @@ containing a value of this type.
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
         public static final int topbar=0x7f050064;
+        public static final int txtTitle=0x7f05007a;
         public static final int up=0x7f050021;
         public static final int update=0x7f05004f;
         public static final int useLogo=0x7f050003;
@@ -1332,6 +1334,7 @@ containing a value of this type.
         public static final int providers_list=0x7f03002c;
         public static final int recommend=0x7f03002d;
         public static final int support_simple_spinner_dropdown_item=0x7f03002e;
+        public static final int user_profile=0x7f03002f;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;

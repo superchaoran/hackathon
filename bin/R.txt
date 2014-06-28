@@ -300,7 +300,7 @@ int id action_context_bar 0x7f05001d
 int id action_menu_divider 0x7f050016
 int id action_menu_presenter 0x7f050017
 int id action_mode_close_button 0x7f050024
-int id action_settings 0x7f050079
+int id action_settings 0x7f05007b
 int id activity_chooser_view_content 0x7f050025
 int id albumTitle 0x7f05005f
 int id albumname 0x7f050041
@@ -355,6 +355,7 @@ int id icon 0x7f05002a
 int id ifRoom 0x7f05000a
 int id image 0x7f050027
 int id imageView1 0x7f05003d
+int id imgIcon 0x7f050079
 int id imgView 0x7f05006a
 int id industry 0x7f050069
 int id language 0x7f050071
@@ -405,6 +406,7 @@ int id textview 0x7f050065
 int id title 0x7f05002b
 int id top_action_bar 0x7f050020
 int id topbar 0x7f050064
+int id txtTitle 0x7f05007a
 int id up 0x7f050021
 int id update 0x7f05004f
 int id useLogo 0x7f050003
@@ -459,6 +461,7 @@ int layout provider_options 0x7f03002b
 int layout providers_list 0x7f03002c
 int layout recommend 0x7f03002d
 int layout support_simple_spinner_dropdown_item 0x7f03002e
+int layout user_profile 0x7f03002f
 int menu main 0x7f0d0000
 int menu personal_archive 0x7f0d0001
 int string LoginWaitDialogBody 0x7f0a0018
