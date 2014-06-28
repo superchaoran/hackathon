@@ -31,6 +31,7 @@ import android.widget.Toast;
 import com.amazon.hackathon.contactshare.gridview.GridViewGenerator;
 import com.amazon.hackathon.contactshare.gridview.ImageAdapter;
 import com.amazon.hackathon.contactshare.login.LoginModel;
+import com.amazon.hackathon.contactshare.utils.ImageDownloaderTask;
 import com.amazon.hackathon.contactshare.utils.User;
 import com.amazon.hackathon.contactshare.utils.addAUrlImage;
 import com.amazon.hackathoncontactshare.R;
@@ -73,25 +74,26 @@ public class MainActivity extends ActionBarActivity {
     //grid view
     GridView gridview = (GridView) findViewById(R.id.gridview);
     ArrayList<User> userList = new ArrayList<User>();
+    GridViewGenerator gvg = new GridViewGenerator(gridview,this);
+    
+    //Use cases:
     String username="chaoran";
     String url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
     User user1 = new User(username,url);
     User user2 = new User(username,url);
     User user3 = new User(username,url);
     User user4 = new User(username,url);
-    userList.add(user1);
-    userList.add(user2);
-    
-    userList.add(user3);
-    userList.add(user4);
-
-    new GridViewGenerator(userList,gridview,this);
+    gvg.addUser(user1);
+    gvg.addUser(user2);
+    gvg.addUser(user3);
+    gvg.addUser(user4);
+    gvg.removeUser("chaoran");
 
     
     //add a URL image
     ImageView iv= (ImageView)findViewById(R.id.imageView1);
     url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
-    (new Thread(new addAUrlImage (iv,url))).start();
+    new ImageDownloaderTask(iv).execute(url);
 
 
   }
