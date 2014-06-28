@@ -1,7 +1,5 @@
 package com.amazon.hackathon.contactshare.activity;
 
-import java.util.ArrayList;
-
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -19,71 +17,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.Toast;
-
-import java.io.InputStream;
-import java.io.Serializable;
-import java.io.UnsupportedEncodingException;
-import java.util.List;
-
-
-//import org.brickred.customadapter.CustomAdapter;
-import org.brickred.socialauth.Album;
-import org.brickred.socialauth.Career;
-import org.brickred.socialauth.Contact;
-import org.brickred.socialauth.Feed;
-import org.brickred.socialauth.Profile;
-import org.brickred.socialauth.android.DialogListener;
-import org.brickred.socialauth.android.SocialAuthAdapter;
-import org.brickred.socialauth.android.SocialAuthError;
-import org.brickred.socialauth.android.SocialAuthListener;
-
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.amazon.hackathon.contactshare.gridview.GridViewGenerator;
-import com.amazon.hackathon.contactshare.gridview.ImageAdapter;
 import com.amazon.hackathon.contactshare.login.LoginModel;
 import com.amazon.hackathon.contactshare.personalarchiveactivity.CustomUI;
 import com.amazon.hackathon.contactshare.utils.ImageDownloaderTask;
 import com.amazon.hackathon.contactshare.utils.User;
-import com.amazon.hackathon.contactshare.utils.addAUrlImage;
 import com.amazon.hackathoncontactshare.R;
 
 public class MainActivity extends ActionBarActivity {
 
-  private Button buttonGoToPersonalArchiveActivity;
   private SharedPreferences sharedPreferences;
   private AlertDialog login_dialog;
   private View DialogView;
@@ -92,11 +40,6 @@ public class MainActivity extends ActionBarActivity {
   private CheckBox rememberPassword;
   
   private Button test;
-  private static SocialAuthAdapter adapter;
-
-
-
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -144,21 +87,21 @@ public class MainActivity extends ActionBarActivity {
     String username="chaoran";
     String url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
     User user1 = new User(username,url);
-    User user2 = new User("jiahuan",url);
-    User user3 = new User("zhonghu",url);
-    User user4 = new User("xuwei",url);
-    User user5 = new User("huayang",url);
-    User user6 = new User("laji",url);
+    User user2 = new User("jiahuan",url,"idjiahuan");
+    User user3 = new User("zhonghu",url,"idzhonghu");
+    User user4 = new User("xuwei",url,"idxuwei");
+    User user5 = new User("huayang",url,"idhuayang");
+    new User("laji",url,"idlaji");
     gvg.addUser(user1);
     gvg.addUser(user2);
     gvg.addUser(user3);
     gvg.addUser(user4);
     gvg.addUser(user5);
-    gvg.removeUser("laji");
+    gvg.removeUser("idlaji");
 
     
     //add self image and username
-    User currentUser = new User("AmazonUser",url);
+    User currentUser = new User("AmazonUser",url,"idAmazonUser");
     ImageView iv= (ImageView)findViewById(R.id.imageView1);
     url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
     new ImageDownloaderTask(iv).execute(url);
