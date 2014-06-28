@@ -30,6 +30,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import com.amazon.hackathon.contactshare.personalarchive.CustomAdapter;
+
 import org.brickred.socialauth.Album;
 import org.brickred.socialauth.Career;
 import org.brickred.socialauth.Contact;
@@ -65,6 +66,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.amazon.hackathoncontactshare.R;
 
 
@@ -108,11 +110,32 @@ public class CustomUI extends Activity {
 	private  Bitmap bitmap;
     private String msg_value;
 	
+    private String user_phone;
+    private String user_name;
+    
+    private Button button;
+    private EditText phone;
+    private EditText name;
+   
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-
+		
+		button = (Button) findViewById(R.id.personal_edit_button);
+		phone = (EditText) findViewById(R.id.phone_edit);
+		name = (EditText) findViewById(R.id.person_edit_name);
+ 		
+	    button.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				user_phone = phone.getText().toString();
+				user_name = name.getText().toString();
+				
+				System.out.println(user_phone);
+				System.out.println(user_name);
+			}
+		});
 		// Adapter initialization
 		adapter = new SocialAuthAdapter(new ResponseListener());
 
