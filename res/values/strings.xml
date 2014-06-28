@@ -14,6 +14,7 @@
     <string name="LoginWaitDialogBody"></string>
     <string name="imageViewDescription">Missing content description</string>
     <string name="send">send</string>
+    <string name="button_send">button_send</string>
         <string-array name="facebook_array">
     	<item>User Profile</item>
     	<item>Post Message</item>

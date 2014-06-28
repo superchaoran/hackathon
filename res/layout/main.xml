@@ -53,16 +53,46 @@
 	<View
         android:id="@+id/view01"
         android:layout_width="fill_parent"
-        android:layout_height="1dp"
+        android:layout_height="2dp"
         android:background="#313437" />
     <ListView 
 		android:id="@+id/listview"
-		android:layout_height="wrap_content"
+		android:layout_height="200dp"
 		android:layout_width="wrap_content"
-		android:layout_margin="10dp"
+		android:layout_margin="20dp"
 		android:background="@drawable/list_gradient"
 		android:scrollingCache="false"
 		android:divider="#e4e4e4"
-		android:dividerHeight="5px"
+		android:dividerHeight="50px"
 	/>    
+	<LinearLayout 
+	    android:orientation="horizontal"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="7dp"
+    >   
+	    <TextView 
+			android:layout_height="wrap_content"
+			android:layout_width="80dp"
+			android:layout_gravity="center_vertical"
+			android:textColor="#000000"
+			android:textSize="14sp"
+			android:layout_marginLeft="5dp"
+			android:textStyle="bold"
+			android:text="Name"
+		/>
+	    <EditText 
+	        android:id="@+id/person_edit_name"
+	       	android:layout_height="wrap_content"
+			android:layout_width="300dp"
+			android:layout_gravity="center_vertical"
+			android:textColor="#000000"
+			android:textSize="14sp"
+			android:layout_marginLeft="5dp"
+			android:textStyle="bold"
+	        
+	        />
+	</LinearLayout>
+    
+    
 </LinearLayout>

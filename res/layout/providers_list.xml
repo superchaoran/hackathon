@@ -59,7 +59,7 @@
 		android:layout_marginRight="5dp"
 		android:padding="5dp"
     	android:textColor="#a6a6a6"
-		android:textSize="10sp" 
+		android:textSize="20sp" 
 		>
 	</TextView>
 </RelativeLayout>
