@@ -6,7 +6,6 @@ import android.content.Context;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.amazon.hackathon.contactshare.utils.User;
@@ -35,9 +34,9 @@ public class GridViewGenerator{
 		// TODO Auto-generated method stub
 		this.userList.add(user);
 	}
-	public void removeUser(String username){
+	public void removeUser(String userId){
 		for(int i=0;i<userList.size();i++){
-			if(userList.get(i).getUsername().equals(username)){
+			if(userList.get(i).getUserId().equals(userId)){
 				userList.remove(i);
 				return;
 			}
