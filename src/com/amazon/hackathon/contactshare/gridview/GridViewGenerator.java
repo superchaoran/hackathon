@@ -19,7 +19,8 @@ public class GridViewGenerator{
 		gridview.setAdapter(new ImageAdapter(context,this.userList));
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-	            Toast.makeText(context, position, Toast.LENGTH_SHORT).show();
+	            //Toast.makeText(context, position, Toast.LENGTH_SHORT).show();
+	        	System.out.println(userList.get(position).getUsername()+" clicked!");
 	        }
 	    });
 	}

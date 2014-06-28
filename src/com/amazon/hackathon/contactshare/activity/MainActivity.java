@@ -73,8 +73,7 @@ public class MainActivity extends ActionBarActivity {
     
     //grid view
     GridView gridview = (GridView) findViewById(R.id.gridview);
-    ArrayList<User> userList = new ArrayList<User>();
-    GridViewGenerator gvg = new GridViewGenerator(gridview,this);
+    GridViewGenerator gvg = new GridViewGenerator(gridview,MainActivity.this);
     
     //Use cases:
     String username="chaoran";
