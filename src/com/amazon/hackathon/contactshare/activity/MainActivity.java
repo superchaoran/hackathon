@@ -1,5 +1,7 @@
 package com.amazon.hackathon.contactshare.activity;
 
+import java.util.ArrayList;
+
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -17,12 +19,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.amazon.hackathon.contactshare.gridview.GridViewGenerator;
+import com.amazon.hackathon.contactshare.gridview.ImageAdapter;
 import com.amazon.hackathon.contactshare.login.LoginModel;
+import com.amazon.hackathon.contactshare.utils.User;
 import com.amazon.hackathon.contactshare.utils.addAUrlImage;
 import com.amazon.hackathoncontactshare.R;
 
@@ -61,8 +70,12 @@ public class MainActivity extends ActionBarActivity {
           .commit();
     }
     
-    //add a URL image
+    //grid view
+    GridView gridview = (GridView) findViewById(R.id.gridview);
+    ArrayList<User> userList = new ArrayList<User>();
+    new GridViewGenerator(userList,gridview,this);
     
+    //add a URL image
     ImageView iv= (ImageView)findViewById(R.id.imageView1);
     String url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
     (new Thread(new addAUrlImage (iv,url))).start();

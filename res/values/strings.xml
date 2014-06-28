@@ -13,4 +13,5 @@
     <string name="LoginWaitDialogTitle">Login</string>
     <string name="LoginWaitDialogBody"></string>
     <string name="imageViewDescription">Missing content description</string>
+    <string name="send">send</string>
 </resources>

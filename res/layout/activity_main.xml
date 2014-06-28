@@ -6,11 +6,62 @@
     tools:context="com.amazon.hackathon.contactshare.activity.MainActivity"
     tools:ignore="MergeRootFrame" >
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="232dp"
-        android:layout_height="232dp"
-        android:contentDescription="@string/imageViewDescription"
-        android:src="@drawable/ic_launcher" />
+    
+    
+   	<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+    
+		<LinearLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="fill_parent"
+		    android:paddingLeft="16dp"
+		    android:paddingRight="16dp"
+		    android:orientation="vertical"
+		    android:paddingTop="20dp"
+		    >
+		    
+		    
+			<ImageView
+			   android:id="@+id/imageView1"
+			   android:layout_width="70dp"
+			   android:layout_height="70dp"
+			   android:layout_marginTop="10dp"
+			   android:contentDescription="@string/imageViewDescription"
+			   android:src="@drawable/ic_launcher" 
+			   />
+				
+			 <Button
+			     android:layout_width="70dp"
+			     android:layout_marginTop="10dp"
+			     android:layout_height="wrap_content"
+			     android:layout_gravity="left"
+			     android:text="@string/send" />
+						
+			 <Button
+			     android:layout_width="70dp"
+			     android:layout_marginTop="10dp"
+			     android:layout_height="wrap_content"
+			     android:layout_gravity="left"
+			     android:text="@string/send" />
+	
+		</LinearLayout>
+	
+		<GridView
+	    
+	    android:id="@+id/gridview"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent"
+	    android:columnWidth="90dp"
+	    android:numColumns="auto_fit"
+	    android:verticalSpacing="10dp"
+	    android:horizontalSpacing="10dp"
+	    android:paddingTop="20dp"
+	    android:stretchMode="columnWidth"
+	    android:gravity="center"
+		/>
+		
+	</LinearLayout>
 
 </FrameLayout>

@@ -1078,6 +1078,14 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int ic_launcher=0x7f020057;
+        public static final int sample_0=0x7f020058;
+        public static final int sample_1=0x7f020059;
+        public static final int sample_2=0x7f02005a;
+        public static final int sample_3=0x7f02005b;
+        public static final int sample_4=0x7f02005c;
+        public static final int sample_5=0x7f02005d;
+        public static final int sample_6=0x7f02005e;
+        public static final int sample_7=0x7f02005f;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1091,7 +1099,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f050041;
+        public static final int action_settings=0x7f050042;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
@@ -1106,6 +1114,7 @@ containing a value of this type.
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
+        public static final int gridview=0x7f05003e;
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
         public static final int icon=0x7f05002a;
@@ -1118,11 +1127,11 @@ containing a value of this type.
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
-        public static final int passwd=0x7f05003f;
+        public static final int passwd=0x7f050040;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f05002f;
-        public static final int rememberPassword=0x7f050040;
+        public static final int rememberPassword=0x7f050041;
         public static final int search_badge=0x7f050032;
         public static final int search_bar=0x7f050031;
         public static final int search_button=0x7f050033;
@@ -1144,7 +1153,7 @@ containing a value of this type.
         public static final int top_action_bar=0x7f050020;
         public static final int up=0x7f050021;
         public static final int useLogo=0x7f050003;
-        public static final int userid=0x7f05003e;
+        public static final int userid=0x7f05003f;
         public static final int withText=0x7f05000c;
     }
     public static final class integer {
@@ -1260,6 +1269,7 @@ containing a value of this type.
         public static final int password=0x7f0a0013;
         public static final int personal_archive=0x7f0a0011;
         public static final int rememberPassword=0x7f0a0015;
+        public static final int send=0x7f0a001a;
         public static final int title_activity_personal_archive=0x7f0a0010;
         public static final int userName=0x7f0a0012;
     }
