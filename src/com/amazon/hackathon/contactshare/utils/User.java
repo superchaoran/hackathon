@@ -9,6 +9,12 @@ public class User {
 		this.username = username;
 		this.imageUrl = imageUrl;
 	}
+	
+	public User(String username,String imageUrl,String id){
+		this.username = username;
+		this.imageUrl = imageUrl;
+		this.id = id;
+	}
 	public String getUsername() {
 		return username;
 	}

@@ -158,11 +158,12 @@ public class MainActivity extends ActionBarActivity {
 
     
     //add self image and username
+    User currentUser = new User("AmazonUser",url);
     ImageView iv= (ImageView)findViewById(R.id.imageView1);
     url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
     new ImageDownloaderTask(iv).execute(url);
-
-
+    TextView tx=(TextView)findViewById(R.id.txtTitle1);
+    tx.setText(currentUser.getUsername());
   }
   
   
