@@ -75,21 +75,24 @@ public class MainActivity extends ActionBarActivity {
     GridView gridview = (GridView) findViewById(R.id.gridview);
     GridViewGenerator gvg = new GridViewGenerator(gridview,MainActivity.this);
     
-    //Use cases:
+    //Add nearby people usernames and images
     String username="chaoran";
     String url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
     User user1 = new User(username,url);
-    User user2 = new User(username,url);
-    User user3 = new User(username,url);
-    User user4 = new User(username,url);
+    User user2 = new User("jiahuan",url);
+    User user3 = new User("zhonghu",url);
+    User user4 = new User("xuwei",url);
+    User user5 = new User("huayang",url);
+    User user6 = new User("laji",url);
     gvg.addUser(user1);
     gvg.addUser(user2);
     gvg.addUser(user3);
     gvg.addUser(user4);
-    gvg.removeUser("chaoran");
+    gvg.addUser(user5);
+    gvg.removeUser("laji");
 
     
-    //add a URL image
+    //add self image and username
     ImageView iv= (ImageView)findViewById(R.id.imageView1);
     url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
     new ImageDownloaderTask(iv).execute(url);

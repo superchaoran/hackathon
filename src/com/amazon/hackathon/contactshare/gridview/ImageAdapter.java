@@ -10,11 +10,14 @@ import com.amazon.hackathoncontactshare.R;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.amazon.hackathon.contactshare.utils.ImageDownloaderTask;;
 
 public class ImageAdapter extends BaseAdapter {
@@ -42,19 +45,12 @@ public class ImageAdapter extends BaseAdapter {
 	        ImageView imageView;
 	        if (convertView == null) {  // if it's not recycled, initialize some attributes
 	            imageView = new ImageView(mContext);
-	            imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
+	            imageView.setLayoutParams(new GridView.LayoutParams(150, 150));
 	            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 	            imageView.setPadding(8, 8, 8, 8);
 	        } else {
 	            imageView = (ImageView) convertView;
 	        }
-	        
-	        //ImageView iv= (ImageView)findViewById(R.id.imageView1);
-	        
-	        //String url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
-	        //(new Thread(new addAUrlImage (imageView,this.userList.get(position).getImageUrl()))).start();
-	        //imageView.setImageResource(mThumbIds[position]);
-	        
 	        new ImageDownloaderTask(imageView).execute(this.userList.get(position).getImageUrl());
 	        return imageView;
 	    }
