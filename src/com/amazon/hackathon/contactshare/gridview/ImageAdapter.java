@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import com.amazon.hackathon.contactshare.utils.ImageDownloaderTask;;
 
 public class ImageAdapter extends BaseAdapter {
 	  private Context mContext;
@@ -25,7 +26,7 @@ public class ImageAdapter extends BaseAdapter {
 	    }
 
 	    public int getCount() {
-	        return mThumbIds.length;
+	        return userList.size();
 	    }
 
 	    public Object getItem(int position) {
@@ -50,9 +51,11 @@ public class ImageAdapter extends BaseAdapter {
 	        
 	        //ImageView iv= (ImageView)findViewById(R.id.imageView1);
 	        
-	        String url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
-	        (new Thread(new addAUrlImage (imageView,url))).start();
+	        //String url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
+	        //(new Thread(new addAUrlImage (imageView,this.userList.get(position).getImageUrl()))).start();
 	        //imageView.setImageResource(mThumbIds[position]);
+	        
+	        new ImageDownloaderTask(imageView).execute(this.userList.get(position).getImageUrl());
 	        return imageView;
 	    }
 
@@ -65,6 +68,7 @@ public class ImageAdapter extends BaseAdapter {
 		}
 
 		// references to our images
+		/*
 	    private Integer[] mThumbIds = {
 	            R.drawable.sample_2, R.drawable.sample_3,
 	            R.drawable.sample_4, R.drawable.sample_5,
@@ -77,5 +81,5 @@ public class ImageAdapter extends BaseAdapter {
 	            R.drawable.sample_2, R.drawable.sample_3,
 	            R.drawable.sample_4, R.drawable.sample_5,
 	            R.drawable.sample_6, R.drawable.sample_7
-	    };
+	    };*/
 }

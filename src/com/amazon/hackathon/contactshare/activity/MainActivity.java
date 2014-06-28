@@ -73,12 +73,26 @@ public class MainActivity extends ActionBarActivity {
     //grid view
     GridView gridview = (GridView) findViewById(R.id.gridview);
     ArrayList<User> userList = new ArrayList<User>();
+    String username="chaoran";
+    String url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
+    User user1 = new User(username,url);
+    User user2 = new User(username,url);
+    User user3 = new User(username,url);
+    User user4 = new User(username,url);
+    userList.add(user1);
+    userList.add(user2);
+    
+    userList.add(user3);
+    userList.add(user4);
+
     new GridViewGenerator(userList,gridview,this);
+
     
     //add a URL image
     ImageView iv= (ImageView)findViewById(R.id.imageView1);
-    String url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
+    url="http://icons.iconarchive.com/icons/crountch/one-piece-jolly-roger/72/Luffys-flag-2-icon.png";
     (new Thread(new addAUrlImage (iv,url))).start();
+
 
   }
   
