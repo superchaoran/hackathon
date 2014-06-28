@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
@@ -28,9 +29,53 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.InputStream;
+import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.util.List;
+
+
+//import org.brickred.customadapter.CustomAdapter;
+import org.brickred.socialauth.Album;
+import org.brickred.socialauth.Career;
+import org.brickred.socialauth.Contact;
+import org.brickred.socialauth.Feed;
+import org.brickred.socialauth.Profile;
+import org.brickred.socialauth.android.DialogListener;
+import org.brickred.socialauth.android.SocialAuthAdapter;
+import org.brickred.socialauth.android.SocialAuthError;
+import org.brickred.socialauth.android.SocialAuthListener;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.amazon.hackathon.contactshare.gridview.GridViewGenerator;
 import com.amazon.hackathon.contactshare.gridview.ImageAdapter;
 import com.amazon.hackathon.contactshare.login.LoginModel;
+import com.amazon.hackathon.contactshare.personalarchiveactivity.CustomUI;
 import com.amazon.hackathon.contactshare.utils.User;
 import com.amazon.hackathon.contactshare.utils.addAUrlImage;
 import com.amazon.hackathoncontactshare.R;
@@ -44,6 +89,9 @@ public class MainActivity extends ActionBarActivity {
   private ProgressDialog p_dialog;
   private EditText userID, passwd;
   private CheckBox rememberPassword;
+  
+  private Button test;
+  private static SocialAuthAdapter adapter;
 
 
 
@@ -60,7 +108,24 @@ public class MainActivity extends ActionBarActivity {
     passwd = (EditText) DialogView.findViewById(R.id.passwd);
     rememberPassword = (CheckBox) DialogView.findViewById(R.id.rememberPassword);
 
-    //setupOnClickListener();
+    test = (Button) findViewById(R.id.button1);
+//    adapter = new SocialAuthAdapter(new ResponseListener());
+//    
+// 
+//    
+//   test.setOnClickListener(new OnClickListener() 
+//   {
+//      public void onClick(View v) 
+//      {
+//          adapter.authorize(ProviderUI.this, Provider.FACEBOOK);
+//      }
+//  });
+   
+   
+   
+   
+    
+    setupOnClickListener();
     setupDialog();
 
     showLoginDialog();
@@ -181,11 +246,11 @@ public class MainActivity extends ActionBarActivity {
 
   private void setupOnClickListener() {
     // TODO Auto-generated method stub
-    buttonGoToPersonalArchiveActivity.setOnClickListener(new View.OnClickListener() {
+    test.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
         Intent intent = new Intent();
-        intent.setClass(MainActivity.this, PersonalArchiveActivity.class);
+        intent.setClass(MainActivity.this, CustomUI.class);
         startActivity(intent);
       }
     });
