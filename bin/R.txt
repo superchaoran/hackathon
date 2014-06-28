@@ -254,7 +254,7 @@ int id action_context_bar 0x7f05001d
 int id action_menu_divider 0x7f050016
 int id action_menu_presenter 0x7f050017
 int id action_mode_close_button 0x7f050024
-int id action_settings 0x7f050042
+int id action_settings 0x7f050044
 int id activity_chooser_view_content 0x7f050025
 int id always 0x7f05000b
 int id beginning 0x7f050011
@@ -276,6 +276,7 @@ int id icon 0x7f05002a
 int id ifRoom 0x7f05000a
 int id image 0x7f050027
 int id imageView1 0x7f05003d
+int id imgIcon 0x7f050042
 int id listMode 0x7f050001
 int id list_item 0x7f050029
 int id middle 0x7f050012
@@ -306,6 +307,7 @@ int id submit_area 0x7f050039
 int id tabMode 0x7f050002
 int id title 0x7f05002b
 int id top_action_bar 0x7f050020
+int id txtTitle 0x7f050043
 int id up 0x7f050021
 int id useLogo 0x7f050003
 int id userid 0x7f05003f
@@ -341,6 +343,7 @@ int layout dialog_login 0x7f03001a
 int layout fragment_main 0x7f03001b
 int layout fragment_personal_archive 0x7f03001c
 int layout support_simple_spinner_dropdown_item 0x7f03001d
+int layout user_profile 0x7f03001e
 int menu main 0x7f0c0000
 int menu personal_archive 0x7f0c0001
 int string LoginWaitDialogBody 0x7f0a0018

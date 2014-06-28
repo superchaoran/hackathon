@@ -11,12 +11,13 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.amazon.hackathon.contactshare.utils.User;
 import com.amazon.hackathon.contactshare.gridview.ImageAdapter;
+import com.amazon.hackathoncontactshare.R;
 
 public class GridViewGenerator{
 	private ArrayList<User> userList;
 	public GridViewGenerator(GridView gridview, final Context context){
 		this.userList= new ArrayList<User>();
-		gridview.setAdapter(new ImageAdapter(context,this.userList));
+		gridview.setAdapter(new ImageAdapter(R.layout.user_profile,context,this.userList));
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 	            //Toast.makeText(context, position, Toast.LENGTH_SHORT).show();

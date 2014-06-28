@@ -8,6 +8,7 @@ import com.amazon.hackathon.contactshare.utils.User;
 import com.amazon.hackathon.contactshare.utils.addAUrlImage;
 import com.amazon.hackathoncontactshare.R;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
@@ -23,9 +24,11 @@ import com.amazon.hackathon.contactshare.utils.ImageDownloaderTask;;
 public class ImageAdapter extends BaseAdapter {
 	  private Context mContext;
 	  private ArrayList<User> userList;
-	    public ImageAdapter(Context c, ArrayList<User> userList) {
+	  int layoutResourceId;  
+	    public ImageAdapter(int layoutResourceId,Context c, ArrayList<User> userList) {
 	        mContext = c;
 	        this.setUserList(userList);
+	        this.layoutResourceId=layoutResourceId;
 	    }
 
 	    public int getCount() {
@@ -40,8 +43,45 @@ public class ImageAdapter extends BaseAdapter {
 	        return 0;
 	    }
 
+	    
+	    static class UserProfileHolder
+	    {
+	        ImageView imgIcon;
+	        TextView txtTitle;
+	    }
+	    
 	    // create a new ImageView for each item referenced by the Adapter
 	    public View getView(int position, View convertView, ViewGroup parent) {
+	    	
+	        View row = convertView;
+	        UserProfileHolder holder = null;
+	        
+	        if(row == null)
+	        {
+	            LayoutInflater inflater = ((Activity)mContext).getLayoutInflater();
+	            row = inflater.inflate(layoutResourceId, parent, false);
+	            
+	            holder = new UserProfileHolder();
+	            holder.imgIcon = (ImageView)row.findViewById(R.id.imgIcon);
+	            holder.txtTitle = (TextView)row.findViewById(R.id.txtTitle);
+	            
+	            row.setTag(holder);
+	        }
+	        
+	        else
+	        {
+	            holder = (UserProfileHolder)row.getTag();
+	        }
+	        
+	        User user = userList.get(position);
+	        holder.txtTitle.setText(user.getUsername());
+	        new ImageDownloaderTask(holder.imgIcon).execute(this.userList.get(position).getImageUrl());
+	        return row;
+	        
+	    	
+	    	
+	    	
+	    	/*
 	        ImageView imageView;
 	        if (convertView == null) {  // if it's not recycled, initialize some attributes
 	            imageView = new ImageView(mContext);
@@ -52,7 +92,7 @@ public class ImageAdapter extends BaseAdapter {
 	            imageView = (ImageView) convertView;
 	        }
 	        new ImageDownloaderTask(imageView).execute(this.userList.get(position).getImageUrl());
-	        return imageView;
+	        return imageView;*/
 	    }
 
 	    public ArrayList<User> getUserList() {
@@ -62,20 +102,4 @@ public class ImageAdapter extends BaseAdapter {
 		public void setUserList(ArrayList<User> userList) {
 			this.userList = userList;
 		}
-
-		// references to our images
-		/*
-	    private Integer[] mThumbIds = {
-	            R.drawable.sample_2, R.drawable.sample_3,
-	            R.drawable.sample_4, R.drawable.sample_5,
-	            R.drawable.sample_6, R.drawable.sample_7,
-	            R.drawable.sample_0, R.drawable.sample_1,
-	            R.drawable.sample_2, R.drawable.sample_3,
-	            R.drawable.sample_4, R.drawable.sample_5,
-	            R.drawable.sample_6, R.drawable.sample_7,
-	            R.drawable.sample_0, R.drawable.sample_1,
-	            R.drawable.sample_2, R.drawable.sample_3,
-	            R.drawable.sample_4, R.drawable.sample_5,
-	            R.drawable.sample_6, R.drawable.sample_7
-	    };*/
 }
